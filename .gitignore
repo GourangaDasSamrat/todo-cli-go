@@ -1,0 +1,38 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Build directory
+build/
+dist/
+
+# Go workspace file
+go.work
+
+# IDE specific files
+*.swp
+*.swo
+*~
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Application data (optional - uncomment if you want to ignore local data)
+# .todo-cli/
+
+# Dependency directories
+vendor/
+
+# Binary output
+todo
+todo-*
