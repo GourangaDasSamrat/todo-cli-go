@@ -56,10 +56,12 @@ Download the latest release for your platform from the [Releases page](https://g
 
 Available platforms:
 
-- **Linux** - `todo-{version}-linux-amd64.tar.gz`
+- **Linux(amd64)** - `todo-{version}-linux-amd64.tar.gz`
+- **Linux(arm64)** - `todo-{version}-linux-am64.tar.gz`
 - **macOS (Intel)** - `todo-{version}-darwin-amd64.tar.gz`
 - **macOS (Apple Silicon)** - `todo-{version}-darwin-arm64.tar.gz`
-- **Windows** - `todo-{version}-windows-amd64.zip`
+- **Windows(amd64)** - `todo-{version}-windows-amd64.zip`
+- **Windows(arm64)*** - `todo-{version}-windows-arm64.zip`
 
 #### Installation Steps:
 
@@ -374,9 +376,10 @@ When you push a tag (e.g., `v1.0.0`), the GitHub Action automatically:
 1. ✅ **Runs Tests** - Ensures all tests pass before building
 2. 🔨 **Builds Binaries** for all platforms:
    - Linux (amd64)
+   - Linux (arm64)
    - macOS Intel (amd64)
    - macOS Apple Silicon (arm64)
-   - Windows (amd64)
+   - Windows (arm64)
 3. 📦 **Creates Release Archives** - `.tar.gz` for Unix, `.zip` for Windows
 4. 📝 **Generates Changelog** - From git commits since last release
 5. 🚀 **Creates GitHub Release** - With all binaries attached
@@ -406,9 +409,11 @@ Tags must follow the format: `v*.*.*` (e.g., `v1.0.0`, `v1.2.3`, `v2.0.0-beta.1`
 Each release includes:
 
 - `todo-{version}-linux-amd64.tar.gz`
+- `todo-{version}-linux-arm64.tar.gz`
 - `todo-{version}-darwin-amd64.tar.gz` (macOS Intel)
 - `todo-{version}-darwin-arm64.tar.gz` (macOS Apple Silicon)
 - `todo-{version}-windows-amd64.zip`
+- `todo-{version}-windows-arm64.zip`
 - Release notes with changelog
 
 ### Homebrew Formula Update

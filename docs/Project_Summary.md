@@ -308,9 +308,9 @@ make build-all
 
 This creates binaries for:
 
-- Linux (amd64)
+- Linux (amd64, arm64)
 - macOS (amd64, arm64)
-- Windows (amd64)
+- Windows (amd64, arm64)
 
 ### Code Organization Guidelines
 
