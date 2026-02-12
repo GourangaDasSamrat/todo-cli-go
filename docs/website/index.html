@@ -1,0 +1,1100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo CLI - Documentation</title>
+    <meta
+      name="description"
+      content="Complete documentation for Todo CLI - A powerful command-line task management application"
+    />
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon" />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
+    />
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./styles/output.css" />
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body
+    class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200"
+  >
+    <!-- Navigation Bar -->
+    <nav
+      class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 z-50"
+    >
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex items-center space-x-3">
+            <button
+              id="mobile-menu-btn"
+              class="lg:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              <i class="bi bi-list text-2xl"></i>
+            </button>
+            <div class="flex items-center space-x-2">
+              <i class="bi bi-check2-square text-primary-500 text-2xl"></i>
+              <span class="text-xl font-bold">Todo CLI</span>
+            </div>
+          </div>
+
+          <!-- Navigation Links -->
+          <div class="hidden md:flex items-center space-x-6">
+            <a href="#home" class="hover:text-primary-500 transition-colors"
+              >Home</a
+            >
+            <a
+              href="#installation"
+              class="hover:text-primary-500 transition-colors"
+              >Installation</a
+            >
+            <a href="#features" class="hover:text-primary-500 transition-colors"
+              >Features</a
+            >
+            <a href="#commands" class="hover:text-primary-500 transition-colors"
+              >Commands</a
+            >
+            <a
+              href="https://github.com/gourangadassamrat/todo-cli-go"
+              class="hover:text-primary-500 transition-colors"
+              target="_blank"
+            >
+              <i class="bi bi-github"></i> GitHub
+            </a>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+          >
+            <i class="bi bi-sun-fill text-xl hidden dark:block"></i>
+            <i class="bi bi-moon-fill text-xl block dark:hidden"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div
+      id="mobile-overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden hidden"
+    ></div>
+
+    <!-- Main Container -->
+    <div class="flex pt-16">
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="fixed lg:sticky top-16 left-0 h-[calc(100vh-4rem)] w-64 bg-gray-50 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300"
+      >
+        <div class="p-4">
+          <div class="space-y-6">
+            <!-- Getting Started -->
+            <div>
+              <h3
+                class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2"
+              >
+                Getting Started
+              </h3>
+              <ul class="space-y-1">
+                <li>
+                  <a
+                    href="#home"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >Introduction</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#installation"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >Installation</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#quick-start"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >Quick Start</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Core Concepts -->
+            <div>
+              <h3
+                class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2"
+              >
+                Core Concepts
+              </h3>
+              <ul class="space-y-1">
+                <li>
+                  <a
+                    href="#features"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >Features</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#task-management"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >Task Management</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#filtering"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >Filtering & Sorting</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#interactive-mode"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >Interactive Mode</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Commands -->
+            <div>
+              <h3
+                class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2"
+              >
+                Commands
+              </h3>
+              <ul class="space-y-1">
+                <li>
+                  <a
+                    href="#cmd-add"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >add</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#cmd-list"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >list</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#cmd-edit"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >edit</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#cmd-delete"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >delete</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#cmd-complete"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >complete</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#cmd-search"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >search</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#cmd-backup"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >backup</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Advanced -->
+            <div>
+              <h3
+                class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2"
+              >
+                Advanced
+              </h3>
+              <ul class="space-y-1">
+                <li>
+                  <a
+                    href="#architecture"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >Architecture</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#security"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >Security</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#contributing"
+                    class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    >Contributing</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 lg:ml-0">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <!-- Hero Section -->
+          <section id="home" class="mb-16">
+            <div class="text-center mb-12">
+              <i
+                class="bi bi-check2-square text-6xl text-primary-500 mb-4 block"
+              ></i>
+              <h1 class="text-5xl font-bold mb-4">Todo CLI</h1>
+              <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
+                A powerful, feature-rich command-line todo application built
+                with Go
+              </p>
+              <div class="flex flex-wrap justify-center gap-4">
+                <a
+                  href="#installation"
+                  class="inline-flex items-center px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors"
+                >
+                  <i class="bi bi-download mr-2"></i>
+                  Get Started
+                </a>
+                <a
+                  href="https://github.com/gourangadassamrat/todo-cli-go"
+                  target="_blank"
+                  class="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                >
+                  <i class="bi bi-github mr-2"></i>
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+
+            <!-- Feature Grid -->
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+              <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <i
+                  class="bi bi-lightning-charge text-3xl text-primary-500 mb-3 block"
+                ></i>
+                <h3 class="text-lg font-semibold mb-2">Fast & Efficient</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                  Lightning-fast task management with minimal resource usage
+                </p>
+              </div>
+              <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <i
+                  class="bi bi-palette text-3xl text-primary-500 mb-3 block"
+                ></i>
+                <h3 class="text-lg font-semibold mb-2">Color-Coded</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                  Beautiful, color-coded output for better task visualization
+                </p>
+              </div>
+              <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <i
+                  class="bi bi-shield-check text-3xl text-primary-500 mb-3 block"
+                ></i>
+                <h3 class="text-lg font-semibold mb-2">Privacy First</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                  All data stored locally, no network communication
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Installation Section -->
+          <section id="installation" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 flex items-center">
+              <i class="bi bi-download mr-3 text-primary-500"></i>
+              Installation
+            </h2>
+
+            <div class="prose dark:prose-invert max-w-none">
+              <!-- Option 1: Homebrew -->
+              <div class="mb-8">
+                <h3 class="text-2xl font-semibold mb-4 flex items-center">
+                  <i class="bi bi-apple mr-2 text-primary-500"></i>
+                  Option 1: Install via Homebrew (macOS)
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                  The easiest way to install on macOS:
+                </p>
+
+                <div class="bg-gray-900 rounded-lg p-4 mb-4 overflow-x-auto">
+                  <pre
+                    class="text-gray-100"
+                  ><code class="language-bash"># Add the tap
+brew tap gourangadassamrat/tap
+
+# Install the app
+brew install todo-cli</code></pre>
+                </div>
+
+                <div
+                  class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-4"
+                >
+                  <div class="flex items-start">
+                    <i
+                      class="bi bi-check-circle text-green-500 text-xl mr-3 mt-1"
+                    ></i>
+                    <div>
+                      <p
+                        class="font-semibold text-green-800 dark:text-green-200"
+                      >
+                        That's it!
+                      </p>
+                      <p class="text-sm text-gray-600 dark:text-gray-400">
+                        You can now run the app using the
+                        <code
+                          class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                          >todo</code
+                        >
+                        command.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Option 2: Manual Installation -->
+              <div class="mb-8">
+                <h3 class="text-2xl font-semibold mb-4 flex items-center">
+                  <i class="bi bi-box-arrow-down mr-2 text-primary-500"></i>
+                  Option 2: Manual Installation
+                </h3>
+
+                <h4 class="text-xl font-semibold mb-3">
+                  Step 1: Download the Application
+                </h4>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                  Download the latest build for your OS from the
+                  <a
+                    href="https://github.com/gourangadassamrat/todo-cli-go/releases"
+                    target="_blank"
+                    class="text-primary-500 hover:text-primary-600 font-semibold inline-flex items-center"
+                  >
+                    Release page
+                    <i class="bi bi-box-arrow-up-right ml-1 text-sm"></i>
+                  </a>
+                </p>
+
+                <!-- Download Cards -->
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                  <div
+                    class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary-500 transition-colors"
+                  >
+                    <div class="flex items-start justify-between mb-2">
+                      <div class="flex items-center">
+                        <i class="bi bi-apple text-2xl mr-2"></i>
+                        <h5 class="font-semibold">macOS (Intel)</h5>
+                      </div>
+                      <span
+                        class="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                        >1.76 MB</span
+                      >
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                      todo-v1.0.0-darwin-amd64.tar.gz
+                    </p>
+                    <a
+                      href="https://github.com/gourangadassamrat/todo-cli-go/releases/download/v1.0.0/todo-v1.0.0-darwin-amd64.tar.gz"
+                      class="inline-flex items-center text-sm text-primary-500 hover:text-primary-600"
+                    >
+                      <i class="bi bi-download mr-1"></i> Download
+                    </a>
+                  </div>
+
+                  <div
+                    class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary-500 transition-colors"
+                  >
+                    <div class="flex items-start justify-between mb-2">
+                      <div class="flex items-center">
+                        <i class="bi bi-apple text-2xl mr-2"></i>
+                        <h5 class="font-semibold">macOS (Apple Silicon)</h5>
+                      </div>
+                      <span
+                        class="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                        >1.68 MB</span
+                      >
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                      todo-v1.0.0-darwin-arm64.tar.gz
+                    </p>
+                    <a
+                      href="https://github.com/gourangadassamrat/todo-cli-go/releases/download/v1.0.0/todo-v1.0.0-darwin-arm64.tar.gz"
+                      class="inline-flex items-center text-sm text-primary-500 hover:text-primary-600"
+                    >
+                      <i class="bi bi-download mr-1"></i> Download
+                    </a>
+                  </div>
+
+                  <div
+                    class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary-500 transition-colors"
+                  >
+                    <div class="flex items-start justify-between mb-2">
+                      <div class="flex items-center">
+                        <i class="bi bi-ubuntu text-2xl mr-2"></i>
+                        <h5 class="font-semibold">Linux (64-bit)</h5>
+                      </div>
+                      <span
+                        class="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                        >1.69 MB</span
+                      >
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                      todo-v1.0.0-linux-amd64.tar.gz
+                    </p>
+                    <a
+                      href="https://github.com/gourangadassamrat/todo-cli-go/releases/download/v1.0.0/todo-v1.0.0-linux-amd64.tar.gz"
+                      class="inline-flex items-center text-sm text-primary-500 hover:text-primary-600"
+                    >
+                      <i class="bi bi-download mr-1"></i> Download
+                    </a>
+                  </div>
+
+                  <div
+                    class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-primary-500 transition-colors"
+                  >
+                    <div class="flex items-start justify-between mb-2">
+                      <div class="flex items-center">
+                        <i class="bi bi-windows text-2xl mr-2"></i>
+                        <h5 class="font-semibold">Windows (64-bit)</h5>
+                      </div>
+                      <span
+                        class="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                        >1.77 MB</span
+                      >
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                      todo-v1.0.0-windows-amd64.zip
+                    </p>
+                    <a
+                      href="https://github.com/gourangadassamrat/todo-cli-go/releases/download/v1.0.0/todo-v1.0.0-windows-amd64.zip"
+                      class="inline-flex items-center text-sm text-primary-500 hover:text-primary-600"
+                    >
+                      <i class="bi bi-download mr-1"></i> Download
+                    </a>
+                  </div>
+                </div>
+
+                <h4 class="text-xl font-semibold mb-3 mt-6">
+                  Step 2: Test It Works
+                </h4>
+                <div class="bg-gray-900 rounded-lg p-4 mb-4 overflow-x-auto">
+                  <pre class="text-gray-100"><code>./todo --help</code></pre>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                  You should see the help menu with all available commands.
+                </p>
+
+                <h4 class="text-xl font-semibold mb-3 mt-6">
+                  Step 3 (Optional): Install Globally
+                </h4>
+                <div class="bg-gray-900 rounded-lg p-4 mb-4 overflow-x-auto">
+                  <pre
+                    class="text-gray-100"
+                  ><code class="language-bash"># Linux/macOS
+sudo cp todo /usr/local/bin/
+
+# Windows
+# Copy todo.exe to a directory in your PATH</code></pre>
+                </div>
+              </div>
+
+              <div
+                class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-primary-500 p-4 my-6"
+              >
+                <div class="flex items-start">
+                  <i
+                    class="bi bi-info-circle text-primary-500 text-xl mr-3 mt-1"
+                  ></i>
+                  <div>
+                    <p class="font-semibold">Pro Tip</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      Enable bash completion for better experience. Copy the
+                      <code
+                        class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                        >todo-completion.bash</code
+                      >
+                      script to
+                      <code
+                        class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                        >/etc/bash_completion.d/</code
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Quick Start Section -->
+          <section id="quick-start" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 flex items-center">
+              <i class="bi bi-rocket-takeoff mr-3 text-primary-500"></i>
+              Quick Start
+            </h2>
+
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-xl font-semibold mb-3">Add your first task</h3>
+                <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+                  <pre
+                    class="text-gray-100"
+                  ><code>todo add -t "Buy groceries" -p high</code></pre>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-semibold mb-3">List all tasks</h3>
+                <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+                  <pre class="text-gray-100"><code>todo list</code></pre>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-semibold mb-3">Try interactive mode</h3>
+                <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+                  <pre class="text-gray-100"><code>todo interactive</code></pre>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Features Section -->
+          <section id="features" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 flex items-center">
+              <i class="bi bi-star mr-3 text-primary-500"></i>
+              Features
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div
+                class="border border-gray-200 dark:border-gray-700 rounded-lg p-6"
+              >
+                <h3 class="text-lg font-semibold mb-3 flex items-center">
+                  <i class="bi bi-check-circle text-primary-500 mr-2"></i>
+                  Task Management
+                </h3>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li class="flex items-start">
+                    <i
+                      class="bi bi-chevron-right text-primary-500 mr-2 mt-1"
+                    ></i>
+                    Add, edit, and delete tasks
+                  </li>
+                  <li class="flex items-start">
+                    <i
+                      class="bi bi-chevron-right text-primary-500 mr-2 mt-1"
+                    ></i>
+                    Mark tasks as complete/incomplete
+                  </li>
+                  <li class="flex items-start">
+                    <i
+                      class="bi bi-chevron-right text-primary-500 mr-2 mt-1"
+                    ></i>
+                    Set priorities (low, medium, high)
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="border border-gray-200 dark:border-gray-700 rounded-lg p-6"
+              >
+                <h3 class="text-lg font-semibold mb-3 flex items-center">
+                  <i class="bi bi-funnel text-primary-500 mr-2"></i>
+                  Filtering & Sorting
+                </h3>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li class="flex items-start">
+                    <i
+                      class="bi bi-chevron-right text-primary-500 mr-2 mt-1"
+                    ></i>
+                    Filter by status, priority, project
+                  </li>
+                  <li class="flex items-start">
+                    <i
+                      class="bi bi-chevron-right text-primary-500 mr-2 mt-1"
+                    ></i>
+                    Sort by date, priority, or title
+                  </li>
+                  <li class="flex items-start">
+                    <i
+                      class="bi bi-chevron-right text-primary-500 mr-2 mt-1"
+                    ></i>
+                    Search by keyword
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="border border-gray-200 dark:border-gray-700 rounded-lg p-6"
+              >
+                <h3 class="text-lg font-semibold mb-3 flex items-center">
+                  <i class="bi bi-calendar-date text-primary-500 mr-2"></i>
+                  Organization
+                </h3>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li class="flex items-start">
+                    <i
+                      class="bi bi-chevron-right text-primary-500 mr-2 mt-1"
+                    ></i>
+                    Set due dates and deadlines
+                  </li>
+                  <li class="flex items-start">
+                    <i
+                      class="bi bi-chevron-right text-primary-500 mr-2 mt-1"
+                    ></i>
+                    Categorize with tags and projects
+                  </li>
+                  <li class="flex items-start">
+                    <i
+                      class="bi bi-chevron-right text-primary-500 mr-2 mt-1"
+                    ></i>
+                    Automatic overdue detection
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="border border-gray-200 dark:border-gray-700 rounded-lg p-6"
+              >
+                <h3 class="text-lg font-semibold mb-3 flex items-center">
+                  <i class="bi bi-shield-lock text-primary-500 mr-2"></i>
+                  Data & Security
+                </h3>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li class="flex items-start">
+                    <i
+                      class="bi bi-chevron-right text-primary-500 mr-2 mt-1"
+                    ></i>
+                    Local JSON/YAML storage
+                  </li>
+                  <li class="flex items-start">
+                    <i
+                      class="bi bi-chevron-right text-primary-500 mr-2 mt-1"
+                    ></i>
+                    Backup and restore functionality
+                  </li>
+                  <li class="flex items-start">
+                    <i
+                      class="bi bi-chevron-right text-primary-500 mr-2 mt-1"
+                    ></i>
+                    No network communication
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Commands Section -->
+          <section id="commands" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 flex items-center">
+              <i class="bi bi-terminal mr-3 text-primary-500"></i>
+              Commands Reference
+            </h2>
+
+            <!-- Add Command -->
+            <div
+              id="cmd-add"
+              class="mb-8 border border-gray-200 dark:border-gray-700 rounded-lg p-6"
+            >
+              <h3 class="text-2xl font-semibold mb-4">
+                <code class="text-primary-500">add</code>
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Add a new task to your todo list
+              </p>
+
+              <h4 class="font-semibold mb-2">Aliases:</h4>
+              <p class="mb-4">
+                <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded"
+                  >a</code
+                >,
+                <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded"
+                  >new</code
+                >,
+                <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded"
+                  >create</code
+                >
+              </p>
+
+              <h4 class="font-semibold mb-2">Usage:</h4>
+              <div class="bg-gray-900 rounded-lg p-4 mb-4 overflow-x-auto">
+                <pre
+                  class="text-gray-100"
+                ><code>todo add -t "Task title" [OPTIONS]</code></pre>
+              </div>
+
+              <h4 class="font-semibold mb-2">Flags:</h4>
+              <table class="w-full text-sm">
+                <thead class="bg-gray-50 dark:bg-gray-800">
+                  <tr>
+                    <th class="px-4 py-2 text-left">Flag</th>
+                    <th class="px-4 py-2 text-left">Description</th>
+                    <th class="px-4 py-2 text-left">Required</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                  <tr>
+                    <td class="px-4 py-2"><code>-t, --title</code></td>
+                    <td class="px-4 py-2">Task title</td>
+                    <td class="px-4 py-2">
+                      <span class="text-red-500">Yes</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2"><code>-d, --description</code></td>
+                    <td class="px-4 py-2">Task description</td>
+                    <td class="px-4 py-2">No</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2"><code>-p, --priority</code></td>
+                    <td class="px-4 py-2">Priority (low, medium, high)</td>
+                    <td class="px-4 py-2">No</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2"><code>--project</code></td>
+                    <td class="px-4 py-2">Project name</td>
+                    <td class="px-4 py-2">No</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2"><code>--tags</code></td>
+                    <td class="px-4 py-2">Comma-separated tags</td>
+                    <td class="px-4 py-2">No</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2"><code>--due</code></td>
+                    <td class="px-4 py-2">Due date (YYYY-MM-DD)</td>
+                    <td class="px-4 py-2">No</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h4 class="font-semibold mb-2 mt-4">Examples:</h4>
+              <div class="space-y-2">
+                <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+                  <pre class="text-gray-100"><code># Simple task
+todo add -t "Buy groceries"
+
+# Task with all options
+todo add -t "Complete report" \
+  -d "Q1 financial report" \
+  -p high \
+  --project "Finance" \
+  --tags "urgent,deadline" \
+  --due "2024-03-20"</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <!-- List Command -->
+            <div
+              id="cmd-list"
+              class="mb-8 border border-gray-200 dark:border-gray-700 rounded-lg p-6"
+            >
+              <h3 class="text-2xl font-semibold mb-4">
+                <code class="text-primary-500">list</code>
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Display all tasks with optional filtering and sorting
+              </p>
+
+              <h4 class="font-semibold mb-2">Aliases:</h4>
+              <p class="mb-4">
+                <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded"
+                  >ls</code
+                >,
+                <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded"
+                  >l</code
+                >
+              </p>
+
+              <h4 class="font-semibold mb-2">Usage:</h4>
+              <div class="bg-gray-900 rounded-lg p-4 mb-4 overflow-x-auto">
+                <pre
+                  class="text-gray-100"
+                ><code>todo list [OPTIONS]</code></pre>
+              </div>
+
+              <h4 class="font-semibold mb-2">Examples:</h4>
+              <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+                <pre class="text-gray-100"><code># List all tasks
+todo list
+
+# Filter by status
+todo list --status pending
+todo list --status completed
+
+# Filter and sort
+todo list --priority high --sort date</code></pre>
+              </div>
+            </div>
+
+            <!-- More commands can be added similarly -->
+          </section>
+
+          <!-- Architecture Section -->
+          <section id="architecture" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 flex items-center">
+              <i class="bi bi-diagram-3 mr-3 text-primary-500"></i>
+              Architecture
+            </h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              Todo CLI follows clean architecture principles with clear
+              separation of concerns. For detailed architecture documentation,
+              see
+              <a
+                href="../ARCHITECTURE.md"
+                class="text-primary-500 hover:text-primary-600"
+                >ARCHITECTURE.md</a
+              >
+            </p>
+
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
+              <h3 class="text-xl font-semibold mb-4">Key Components</h3>
+              <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                <li class="flex items-start">
+                  <i
+                    class="bi bi-arrow-right-circle text-primary-500 mr-2 mt-1"
+                  ></i>
+                  <span
+                    ><strong>Command Layer:</strong> CLI interface built with
+                    Cobra</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <i
+                    class="bi bi-arrow-right-circle text-primary-500 mr-2 mt-1"
+                  ></i>
+                  <span
+                    ><strong>Business Logic:</strong> Task models, filtering,
+                    and sorting</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <i
+                    class="bi bi-arrow-right-circle text-primary-500 mr-2 mt-1"
+                  ></i>
+                  <span
+                    ><strong>Storage Layer:</strong> Interface-based JSON/YAML
+                    persistence</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <i
+                    class="bi bi-arrow-right-circle text-primary-500 mr-2 mt-1"
+                  ></i>
+                  <span
+                    ><strong>UI Components:</strong> Color-coded terminal
+                    output</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Security Section -->
+          <section id="security" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 flex items-center">
+              <i class="bi bi-shield-check mr-3 text-primary-500"></i>
+              Security
+            </h2>
+
+            <div
+              class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-4 mb-6"
+            >
+              <div class="flex items-start">
+                <i
+                  class="bi bi-exclamation-triangle text-yellow-500 text-xl mr-3 mt-1"
+                ></i>
+                <div>
+                  <p class="font-semibold">Security First</p>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">
+                    Todo CLI is designed with security and privacy as top
+                    priorities.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3
+                  class="text-xl font-semibold mb-3 text-green-600 dark:text-green-400"
+                >
+                  Protected ✓
+                </h3>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li class="flex items-start">
+                    <i class="bi bi-check-circle text-green-500 mr-2 mt-1"></i>
+                    Path traversal attacks
+                  </li>
+                  <li class="flex items-start">
+                    <i class="bi bi-check-circle text-green-500 mr-2 mt-1"></i>
+                    Command injection
+                  </li>
+                  <li class="flex items-start">
+                    <i class="bi bi-check-circle text-green-500 mr-2 mt-1"></i>
+                    Network-based attacks
+                  </li>
+                  <li class="flex items-start">
+                    <i class="bi bi-check-circle text-green-500 mr-2 mt-1"></i>
+                    Input validation
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3
+                  class="text-xl font-semibold mb-3 text-blue-600 dark:text-blue-400"
+                >
+                  User Responsibility
+                </h3>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li class="flex items-start">
+                    <i class="bi bi-info-circle text-blue-500 mr-2 mt-1"></i>
+                    Enable full-disk encryption
+                  </li>
+                  <li class="flex items-start">
+                    <i class="bi bi-info-circle text-blue-500 mr-2 mt-1"></i>
+                    Secure backup storage
+                  </li>
+                  <li class="flex items-start">
+                    <i class="bi bi-info-circle text-blue-500 mr-2 mt-1"></i>
+                    Verify binary checksums
+                  </li>
+                  <li class="flex items-start">
+                    <i class="bi bi-info-circle text-blue-500 mr-2 mt-1"></i>
+                    Keep system updated
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <p class="mt-6 text-gray-600 dark:text-gray-400">
+              For detailed security information, see
+              <a
+                href="../SECURITY.md"
+                class="text-primary-500 hover:text-primary-600"
+                >SECURITY.md</a
+              >
+            </p>
+          </section>
+
+          <!-- Contributing Section -->
+          <section id="contributing" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 flex items-center">
+              <i class="bi bi-people mr-3 text-primary-500"></i>
+              Contributing
+            </h2>
+
+            <p class="text-gray-600 dark:text-gray-400 mb-6">
+              We welcome contributions from the community! Whether it's bug
+              fixes, new features, or documentation improvements.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4 mb-6">
+              <a
+                href="https://github.com/gourangadassamrat/todo-cli-go/issues"
+                target="_blank"
+                class="block p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-primary-500 transition-colors"
+              >
+                <i class="bi bi-bug text-2xl text-primary-500 mb-2 block"></i>
+                <h3 class="font-semibold mb-1">Report Bugs</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  Found an issue? Let us know
+                </p>
+              </a>
+
+              <a
+                href="https://github.com/gourangadassamrat/todo-cli-go/pulls"
+                target="_blank"
+                class="block p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-primary-500 transition-colors"
+              >
+                <i
+                  class="bi bi-code-slash text-2xl text-primary-500 mb-2 block"
+                ></i>
+                <h3 class="font-semibold mb-1">Submit PRs</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  Contribute code improvements
+                </p>
+              </a>
+
+              <a
+                href="../CONTRIBUTING.md"
+                class="block p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-primary-500 transition-colors"
+              >
+                <i class="bi bi-book text-2xl text-primary-500 mb-2 block"></i>
+                <h3 class="font-semibold mb-1">Read Guide</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  Learn how to contribute
+                </p>
+              </a>
+            </div>
+          </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="border-t border-gray-200 dark:border-gray-700 mt-16">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+              <div class="mb-4 md:mb-0">
+                <p class="text-gray-600 dark:text-gray-400">
+                  &copy; 2024 Todo CLI. Released under MIT License.
+                </p>
+              </div>
+              <div class="flex space-x-6">
+                <a
+                  href="https://github.com/gourangadassamrat/todo-cli-go"
+                  target="_blank"
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary-500"
+                >
+                  <i class="bi bi-github text-xl"></i>
+                </a>
+                <a
+                  href="https://twitter.com/gourangadas_sam"
+                  target="_blank"
+                  class="text-gray-600 dark:text-gray-400 hover:text-primary-500"
+                >
+                  <i class="bi bi-twitter text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>

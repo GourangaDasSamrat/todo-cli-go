@@ -1,0 +1,61 @@
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Code block styling */
+pre {
+  overflow-x: auto;
+}
+
+code {
+  font-family: "Courier New", monospace;
+}
+
+/* Sidebar active state */
+.nav-link.active {
+  background: rgba(14, 165, 233, 0.1);
+  color: #0ea5e9;
+  border-left: 3px solid #0ea5e9;
+}
+
+.dark .nav-link.active {
+  background: rgba(14, 165, 233, 0.15);
+}
+
+/* Mobile menu animation */
+.mobile-menu {
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.hidden {
+  transform: translateX(-100%);
+}

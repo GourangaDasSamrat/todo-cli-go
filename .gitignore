@@ -36,3 +36,6 @@ vendor/
 # Binary output
 todo
 todo-*
+
+# node files
+node_modules/

@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "watch:css": "npx @tailwindcss/cli -i ./styles/input.css -o ./styles/output.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "bootstrap-icons": "^1.13.1",
+    "tailwindcss": "^4.1.18"
+  }
+}
