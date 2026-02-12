@@ -529,7 +529,7 @@ Created with ❤️ by [Gouranga Das Samrat](https://github.com/GourangaDasSamra
 Built with:
 
 - [Cobra](https://github.com/spf13/cobra) - CLI framework
-- [Bubble Tea](https://github.com/charmbracelet/bubbletea) - TUI framework (if used)
+- [Promptui](https://github.com/manifoldco/promptui) - TUI framework
 - [Go](https://golang.org/) - Programming language
 
 ---
